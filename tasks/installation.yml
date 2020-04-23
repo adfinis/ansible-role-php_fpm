@@ -9,12 +9,21 @@
   retries: 3
   delay: 2
 
-- name: install neccesary packages
+- name: install necessary packages
   package:
     name: '{{ php_fpm_package_list }}'
     state: present
   register: php_fpm_register_packages_installed
   until: php_fpm_register_packages_installed is success
+  retries: 3
+  delay: 2
+
+- name: install additional packages
+  package:
+    name: '{{ php_fpm_additional_packages }}'
+    state: present
+  register: php_fpm_register_additional_packages_installed
+  until: php_fpm_register_additional_packages_installed is success
   retries: 3
   delay: 2
 
