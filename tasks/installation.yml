@@ -30,6 +30,6 @@
 
 - name: start and enable php-fpm service
   service:
-    name: 'rh-php{{ php_fpm_php_version }}-php-fpm'
+    name: '{{ php_fpm_systemd_unit }}'
     state: started
     enabled: true
