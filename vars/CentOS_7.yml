@@ -1,5 +1,7 @@
 ---
 
+php_fpm_php_ini: '/etc/opt/rh/rh-php{{ php_fpm_php_version }}/php.ini'
+php_fpm_systemd_unit: 'rh-php{{ php_fpm_php_version }}-php-fpm'
 php_fpm_scl_package_list:
   - centos-release-scl
 
