@@ -1,8 +1,8 @@
 ---
 
-- name: install neccesary scl packages
+- name: install neccesary php-fpm packages
   package:
-    name: '{{ php_fpm_scl_package_list }}'
+    name: '{{ php_fpm_package_list }}'
     state: present
   register: php_fpm_register_scl_packages_installed
   until: php_fpm_register_scl_packages_installed is success
